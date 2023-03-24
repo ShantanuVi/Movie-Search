@@ -44,11 +44,12 @@ const MovieSearch = () => {
     };
 
     return (
-        <Box p={4}><Heading m="3" align="center"> Movie Search App</Heading>
+        <Box bgColor="black" p={4}><Heading m="3" align="center" color="lightcoral"> Movie Search App</Heading>
             <Flex mb={4}>
                 <InputGroup>
                     <Input
                         type="text"
+                        color="white"
                         placeholder="Search movies..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
@@ -70,15 +71,15 @@ const MovieSearch = () => {
                             onClick={() => selectMovie(movie.imdbID)}
                         >
                             <Image src={movie.Poster} alt={movie.Title} />
-                            <Text mt={2} fontWeight="bold">
+                            <Text mt={2} fontWeight="bold" color="white">
                                 {movie.Title}
                             </Text>
-                            <Text fontSize="sm">{movie.Year}</Text>
+                            <Text fontSize="sm" color="white">{movie.Year}</Text>
                         </Box>
                     </GridItem>
                 ))}
             </Grid>
-            <Modal isOpen={selectedMovie !== null} onClose={() => setSelectedMovie(null)}>
+            <Modal isOpen={selectedMovie !== null} onClose={() => setSelectedMovie(null)} >
                 <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>{selectedMovie?.Title}</ModalHeader>
